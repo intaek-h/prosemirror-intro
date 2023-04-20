@@ -36,8 +36,26 @@ export const spec = {
         return ["p", 0];
       },
     },
+
+    blockquote: {
+      content: "(paragraph)+",
+      group: "block",
+      defining: true,
+      parseDOM: [{ tag: "blockquote" }],
+      toDOM() {
+        return blockquoteDOM;
+      },
+    },
   },
-  marks: {},
+
+  marks: {
+    strong: {
+      toDOM() {
+        return ["strong", 0];
+      },
+      parseDOM: [{ tag: "strong" }],
+    },
+  },
 };
 
 export const schema = new Schema(spec);
