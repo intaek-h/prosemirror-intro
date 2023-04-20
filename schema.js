@@ -5,7 +5,7 @@ import { Schema } from "prosemirror-model";
  *
  * 1. 새로운 Node 의 스펙을 만들어 봅니다.
  *    <blockquote> 노드의 스펙:
- *    - content: "(paragraph|heading)+"       (paragraph 혹은 heading 을 1개 이상 가질 수 있습니다.)
+ *    - content: "(paragraph)+"               (paragraph 를 1개 이상 가질 수 있습니다.)
  *    - group: "block"                        (block 으로 분류됩니다.)
  *    - parseDOM: [{ tag: "blockquote" }]     (HTML 태그로부터 노드를 만들 수 있습니다.)
  *    - toDOM: ['blockquote', 0]              (노드를 HTML 태그로 표현할 때 사용됩니다.)
