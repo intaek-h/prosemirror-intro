@@ -14,15 +14,20 @@ class counterPluginView {
    * @param {EditorView} editorView
    */
   constructor(editorView) {
-    // 1. 숫자를 표기할 요소를 생성한다. (클래스명은 counter 로 지정한다.)
+    // 1. 숫자를 표기할 요소를 생성한다.
+    this.counter = document.createElement("div");
+    this.counter.textContent = "0";
+    this.counter.classList.add("counter");
 
     // 2. 에디터의 부모 요소에 숫자를 표기할 요소를 추가한다.
     const editorHolder = editorView.dom.parentNode;
+    editorHolder.insertBefore(this.counter, editorView.dom);
   }
 
   // 3. 에디터의 상태가 변경될 때마다 호출되는 update 메서드에서 숫자를 업데이트 한다.
   update(view) {
-    // counterPlugin.getState(view.state)
+    const { count } = counterPlugin.getState(view.state);
+    this.counter.textContent = count;
   }
 }
 
