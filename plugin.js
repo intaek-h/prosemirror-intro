@@ -10,7 +10,7 @@ const counterPlugin = new Plugin({
       return { count: 0 };
     },
     apply(tr, value) {
-      // ???
+      return { count: value.count + 1 };
     },
   },
 });
