@@ -49,6 +49,8 @@ strongButton.addEventListener("click", (event) => {
   const to = selection.to;
 
   // 4. 시작점과 끝점 사이에 strong 마크를 입힌다는 내용을 트랜잭션 객체에 담는다.
+  transaction.addMark(from, to, strongMark);
 
   // 5. 트랜잭션 객체를 에디터에 전달한다.
+  view.dispatch(transaction);
 });
