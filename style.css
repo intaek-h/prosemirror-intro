@@ -4,6 +4,13 @@ h1 {
   margin: 0;
   padding: 0;
 }
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 0;
+}
 .editor {
   min-height: 600px;
   width: 500px;

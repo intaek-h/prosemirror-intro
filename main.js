@@ -20,3 +20,35 @@ const view = new EditorView(holder, {
     view.updateState(newState);
   },
 });
+
+/**
+ * 선택된 텍스트에 <strong> 태그를 적용하는 기능을 구현해 봅니다.
+ * 미리 만들어둔 strongButton 을 사용하세요.
+ *
+ * 1. 트랜잭션 객체를 생성한다.
+ * 2. 에디터 상태를 구성하는 스키마를 가져와 strong 마크 를 생성한다.
+ * 3. 텍스트 선택의 시작점과 끝점을 가져온다.
+ * 4. 시작점과 끝점 사이에 strong 마크를 입힌다는 내용을 트랜잭션 객체에 담는다.
+ * 5. 트랜잭션 객체를 에디터에 전달한다.
+ *
+ */
+
+const strongButton = document.querySelector(".stronger");
+
+strongButton.addEventListener("click", (event) => {
+  // 1. 트랜잭션 객체를 생성한다.
+  const transaction = view.state.tr;
+
+  // 2. 에디터 상태를 구성하는 스키마를 가져와 strong 마크 를 생성한다.
+  const mySchema = view.state.schema;
+  const strongMark = mySchema.marks.strong.create();
+
+  // 3. 텍스트 선택의 시작점과 끝점을 가져온다.
+  const selection = view.state.selection;
+  const from = selection.from;
+  const to = selection.to;
+
+  // 4. 시작점과 끝점 사이에 strong 마크를 입힌다는 내용을 트랜잭션 객체에 담는다.
+
+  // 5. 트랜잭션 객체를 에디터에 전달한다.
+});
