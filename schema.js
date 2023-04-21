@@ -43,7 +43,7 @@ export const spec = {
       defining: true,
       parseDOM: [{ tag: "blockquote" }],
       toDOM() {
-        return blockquoteDOM;
+        return ['blockquote', 0];
       },
     },
   },
